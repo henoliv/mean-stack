@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/henoliv/mean-stack/issues"
   },
-  "homepage": "https://github.com/henoliv/mean-stack#readme"
+  "homepage": "https://github.com/henoliv/mean-stack#readme",
+  "dependencies": {
+    "express": "^4.8.8"
+  }
 }
