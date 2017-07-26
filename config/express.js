@@ -1,6 +1,6 @@
 // config/express.js
 const express = require('express')
-const home = require('../app/routes/home')
+const home = require('app/routes/home')
 
 module.exports = () => {
   const app = express()
