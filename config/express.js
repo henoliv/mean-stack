@@ -10,5 +10,9 @@ module.exports = () => {
   // middleware
   app.use(express.static('./public'))
 
+  // configurando o ejs para as views
+  app.set('view engine', 'ejs')
+  app.set('views', './app/views')
+
   return app
 }
