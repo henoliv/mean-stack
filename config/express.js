@@ -1,5 +1,6 @@
 // config/express.js
 const express = require('express')
+const home = require('app/routes/home')
 
 module.exports = () => {
   const app = express()
@@ -13,6 +14,9 @@ module.exports = () => {
   // configurando o ejs para as views
   app.set('view engine', 'ejs')
   app.set('views', './app/views')
+
+  // configurando rotas
+  home(app)
 
   return app
 }
