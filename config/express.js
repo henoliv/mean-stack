@@ -1,6 +1,6 @@
 // config/express.js
 const express = require('express')
-const home = require('../app/routes/home')
+const load = require('express-load')
 
 module.exports = () => {
   const app = express()
@@ -16,7 +16,10 @@ module.exports = () => {
   app.set('views', './app/views')
 
   // configurando rotas
-  home(app)
+  load('models', { cwd: 'app' })
+    .then('controllers')
+    .then('routes')
+    .into(app)
 
   return app
 }
