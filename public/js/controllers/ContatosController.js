@@ -1,15 +1,18 @@
 /* global angular */
 angular.module('contatooh').controller('ContatosController',
-  function ($scope) {
+  function ($scope, $http) {
     $scope.total = 0
 
     $scope.incrementa = () => $scope.total++
 
-    $scope.contatos = [
-      { _id: 1, nome: 'Contato Angular 1', email: 'cont1@empresa.com.br' },
-      { _id: 2, nome: 'Contato Angular 2', email: 'cont2@empresa.com.br' },
-      { _id: 3, nome: 'Contato Angular 3', email: 'cont3@empresa.com.br' }
-    ]
+    const promise = $http.get('/contatos')
+    promise
+      .success((data) => {
+        $scope.contatos = data
+      })
+      .catch((statusText) => {
+        console.log(statusText)
+      })
 
     $scope.filtro = ''
   }
