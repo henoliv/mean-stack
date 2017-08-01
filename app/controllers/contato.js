@@ -21,5 +21,9 @@ module.exports = () => {
     : res.status(404).send('Contato não encontrado')
   }
 
+  controller.removeContato = (req, res) => {
+
+  }
+
   return controller
 }
